@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma pergunta importante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container fade-in">
+        <h1>Quer namorar comigo?</h1>
+        <div class="botoes">
+            <button class="btn-sim" onclick="window.location.href='/aceitou'">Sim</button>
+            <button class="btn-nao" id="btn-nao">Não</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

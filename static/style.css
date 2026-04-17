@@ -1,0 +1,129 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    --bg-dark: #0a0a0a;
+    --pink-main: #ff4d94;
+    --pink-glow: #ff1a75;
+    --pink-light: #ffb3d9;
+    --pink-wizard: #ea80b0;
+}
+
+/* Força fundo preto em ambas as páginas */
+html, body {
+    background-color: #000 !important;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- ESTILOS PÁGINA 1 (PERGUNTA) --- */
+.container {
+    z-index: 10;
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--pink-glow);
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 12px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    border: 2px solid var(--pink-main);
+}
+
+.btn-sim {
+    background-color: var(--pink-main);
+    color: white;
+    box-shadow: 0 0 15px var(--pink-main);
+}
+
+.btn-sim:hover {
+    background-color: var(--pink-glow);
+    box-shadow: 0 0 25px var(--pink-glow);
+    transform: scale(1.05);
+}
+
+.btn-nao {
+    background-color: transparent;
+    color: var(--pink-light);
+}
+
+.btn-nao:hover {
+    box-shadow: 0 0 10px var(--pink-light);
+}
+
+/* --- ESTILOS PÁGINA 2 (CORAÇÃO 3D - THE CODING WIZARD) --- */
+.container-page2 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* O container principal precisa deste ID para bater com o código da imagem */
+#ui {
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform: rotateX(20deg); /* Inclinação para ver o efeito 3D */
+}
+
+/* TRANSCRIÇÃO EXATA DA IMAGEM */
+#ui .love_word {
+  color: #ea80b0;
+  font-size: 1.4rem;
+  transform: translateY(-100%) rotateZ(-30deg);
+  text-shadow: 0 0 10px #fff;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* TRANSCRIÇÃO EXATA DA IMAGEM */
+#ui .love_horizontal {
+  position: absolute; /* Necessário para centralizar */
+  animation: horizontal 10000ms infinite alternate ease-in-out;
+  animation-delay: calc(var(--i) * -300ms);
+}
+
+/* ANIMAÇÃO QUE CRIA O MOVIMENTO DO CILINDRO/CORAÇÃO */
+@keyframes horizontal {
+    from {
+        transform: rotateY(0deg) translateZ(180px);
+    }
+    to {
+        transform: rotateY(360deg) translateZ(180px);
+    }
+}
